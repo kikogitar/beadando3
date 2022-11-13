@@ -30,7 +30,7 @@ public class xmlwrite {
     public static void ment(ArrayList<Book> books) {
         try {
             Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
-            Element rootElement = document.createElement("Books");
+            Element rootElement = document.createElement("books");
             document.appendChild(rootElement);
 
             for (Book book : books) {

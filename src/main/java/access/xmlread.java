@@ -83,7 +83,7 @@ public class xmlread {
                 }
             
         } catch (Exception e) {
-            books.add(new Book(99, e.toString(), "hiba", 99, Borito.kemény));
+            books.add(new Book(99, e.toString(), e.getLocalizedMessage(), 99, Borito.kemény));
            
             e.printStackTrace();
         }
