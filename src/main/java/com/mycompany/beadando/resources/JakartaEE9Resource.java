@@ -1,8 +1,11 @@
 package com.mycompany.beadando.resources;
 
 import Buisness.Main;
-import access.xmlread;
+import controller.xmlread;
+import controller.xmlwrite;
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
@@ -32,30 +35,27 @@ public class JakartaEE9Resource {
         ArrayList<Book> books = xmlread.Xmlolvas();
         JSONObject resp = new JSONObject();
         for (int i=0; i < books.size();i++) {
-            resp.put("könyv", books.get(i).getId());
-            resp.put(books.get(i).getSzerzo(), books.get(i).getBorito());
-            resp.put(books.get(i).getCim(), books.get(i).getOldal());
+            resp.put("id", books.get(i).getId());
+            resp.put("szerzo", books.get(i).getSzerzo());
+            resp.put("cim", books.get(i).getCim());
+            resp.put("oldal", books.get(i).getOldal());
+            resp.put("borito", books.get(i).getBorito());
         }
-            
-        
+                
         return Response.ok(resp.toString())
                 .type(MediaType.APPLICATION_JSON)
                 .build();
     }
     
-    @GET
+    @POST
     @Path("/ment")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response ment() {
+    public Response ment(Object o) {
         ArrayList<Book> books = xmlread.Xmlolvas();
-        JSONObject resp = new JSONObject();
-        for (int i=0; i < books.size();i++) {
-            resp.put("könyv", books.get(i).getId());
-            resp.put(books.get(i).getSzerzo(), books.get(i).getBorito());
-            resp.put(books.get(i).getCim(), books.get(i).getOldal());
-        }
-            
-        
+        JSONObject resp = new JSONObject(o);
+        xmlwrite.ment(books);
+
         return Response.ok(resp.toString())
                 .type(MediaType.APPLICATION_JSON)
                 .build();
