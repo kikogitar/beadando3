@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Books>
+    <book>
+        <id>0</id>
+        <szerzo>fdcgvghbb</szerzo>
+        <cim>élkjh</cim>
+        <oldal>654</oldal>
+        <borito>kemény</borito>
+    </book>
+    <book>
+        <id>1</id>
+        <szerzo>kjnhg</szerzo>
+        <cim>fghnj</cim>
+        <oldal>584</oldal>
+        <borito>kemény</borito>
+    </book>
+</Books>

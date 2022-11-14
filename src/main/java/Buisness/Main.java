@@ -4,7 +4,7 @@
  */
 package Buisness;
 
-import access.xmlread;
+import controller.xmlread;
 import com.mycompany.beadando.resources.Book;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
