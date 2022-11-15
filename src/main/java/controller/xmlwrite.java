@@ -47,7 +47,7 @@ public class xmlwrite {
             Transformer transformer = transformerFactory.newTransformer();
 
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new FileOutputStream("books.xml"));
+            StreamResult result = new StreamResult(new FileOutputStream("D:\\Kiko\\netbeans\\projektek\\beadando3\\src\\main\\java\\controller\\books.xml"));
 
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(source, result);

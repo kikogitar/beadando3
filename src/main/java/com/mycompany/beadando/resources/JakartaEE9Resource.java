@@ -32,17 +32,8 @@ public class JakartaEE9Resource {
     @Path("/lista")
     @Produces(MediaType.APPLICATION_JSON)
     public Response lista() {
-        ArrayList<Book> books = xmlread.Xmlolvas();
-        JSONObject resp = new JSONObject();
-        for (int i=0; i < books.size();i++) {
-            resp.put("id", books.get(i).getId());
-            resp.put("szerzo", books.get(i).getSzerzo());
-            resp.put("cim", books.get(i).getCim());
-            resp.put("oldal", books.get(i).getOldal());
-            resp.put("borito", books.get(i).getBorito());
-        }
-                
-        return Response.ok(resp.toString())
+        JSONArray ki = Main.kiir();
+        return Response.ok(ki.toString())
                 .type(MediaType.APPLICATION_JSON)
                 .build();
     }

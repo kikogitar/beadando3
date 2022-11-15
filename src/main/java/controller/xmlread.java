@@ -35,7 +35,7 @@ public class xmlread {
                     DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder =
                     documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse("books.xml");
+            Document document = documentBuilder.parse("D:\\Kiko\\netbeans\\projektek\\beadando3\\src\\main\\java\\controller\\books.xml");
 
             Element rootElement = document.getDocumentElement();
 
@@ -50,41 +50,52 @@ public class xmlread {
                     numberOfElementNodes++;
                     NodeList childNodesOfBooksTag = node.getChildNodes();
                     String id = "", szerzo = "", cim = "", oldal = "", borito = "";
+                    int temp =childNodesOfBooksTag.getLength();
                     for (int j = 0; j < childNodesOfBooksTag.getLength(); j++) {
 
-                        if (childNodesOfBooksTag.item(j).getNodeType() == Node.ELEMENT_NODE) {
-                            if (childNodesOfBooksTag.item(j).getNodeName()=="id"){
-                                id = childNodesOfBooksTag.item(j).getTextContent();
-                            }else if (childNodesOfBooksTag.item(j).getNodeName()=="szerzo"){
-                                szerzo = childNodesOfBooksTag.item(j).getTextContent();
-                            }else if (childNodesOfBooksTag.item(j).getNodeName()=="cim"){
-                                cim = childNodesOfBooksTag.item(j).getTextContent();
-                            }else if (childNodesOfBooksTag.item(j).getNodeName()=="oldal"){
-                                oldal = childNodesOfBooksTag.item(j).getTextContent();
-                            }else if (childNodesOfBooksTag.item(j).getNodeName()=="borito"){
-                                borito = childNodesOfBooksTag.item(j).getTextContent();
-                            }
+                         if (childNodesOfBooksTag.item(j).getNodeType() == Node.ELEMENT_NODE) {
+                            if (null!=childNodesOfBooksTag.item(j).getNodeName())switch (childNodesOfBooksTag.item(j).getNodeName()) {
+                                 case "id":
+                                     id = childNodesOfBooksTag.item(j).getTextContent();
+                                     break;
+                                 case "szerzo":
+                                     szerzo = childNodesOfBooksTag.item(j).getTextContent();
+                                     break;
+                                 case "cim":
+                                     cim = childNodesOfBooksTag.item(j).getTextContent();
+                                     break;
+                                 case "oldal":
+                                     oldal = childNodesOfBooksTag.item(j).getTextContent();
+                                     break;
+                                 case "borito":
+                                     borito = childNodesOfBooksTag.item(j).getTextContent();
+                                     break;
+                                 default:
+                                     break;
+                             }
                             /*
-                            switch (childNodesOfBooksTag.item(j).getNodeName()) {
-                                case "id" -> id = childNodesOfBooksTag.item(j).getTextContent();
-                                case "szerzo" -> szerzo = childNodesOfBooksTag.item(j).getTextContent();
-                                case "cim" -> cim = childNodesOfBooksTag.item(j).getTextContent();
-                                case "oldal" -> oldal = childNodesOfBooksTag.item(j).getTextContent();
-                                case "borito" -> borito = childNodesOfBooksTag.item(j).getTextContent();
-*/
-                            }
+                             switch (childNodesOfBooksTag.item(j).getNodeName()) {
+                             case "id" -> id = childNodesOfBooksTag.item(j).getTextContent();
+                             case "szerzo" -> szerzo = childNodesOfBooksTag.item(j).getTextContent();
+                             case "cim" -> cim = childNodesOfBooksTag.item(j).getTextContent();
+                             case "oldal" -> oldal = childNodesOfBooksTag.item(j).getTextContent();
+                             case "borito" -> borito = childNodesOfBooksTag.item(j).getTextContent();
+                              */
+                            
+                            
+
+                           }
+                    }
                         
                     
                     books.add(new Book(Integer.parseInt(id), szerzo, cim,
                             Integer.parseInt(oldal), Borito.valueOf(borito) ));
                     }
-                }
+                
                     
                 }
             
-        } catch (Exception e) {
-            books.add(new Book(99, e.toString(), e.getLocalizedMessage(), 99, Borito.kemény));
-           
+        } catch (Exception e) {          
             e.printStackTrace();
         }
         return books;
