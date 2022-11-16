@@ -25,7 +25,7 @@ public class Main {
             resp.put("cim", books.get(i).getCim());
             resp.put("oldal", books.get(i).getOldal());
             resp.put("borito", books.get(i).getBorito());
-            ki.put(resp.toString());
+            ki.put(resp);
         }
         
         

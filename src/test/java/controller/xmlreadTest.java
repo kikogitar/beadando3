@@ -40,10 +40,10 @@ public class xmlreadTest {
     
     
 
-    /**
-     * Test of Xmlolvas method, of class xmlread.
     
+
     /*
+    
     @org.junit.jupiter.api.Test
     public void testXmlolvas() {
         System.out.println("Xmlolvas");
@@ -57,6 +57,5 @@ public class xmlreadTest {
         assertEquals(result, result);
         // TODO review the generated test code and remove the default call to fail.
     }
-    * */
-    
+    */
 }

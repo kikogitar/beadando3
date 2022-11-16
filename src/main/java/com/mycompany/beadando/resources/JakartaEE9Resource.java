@@ -39,18 +39,27 @@ public class JakartaEE9Resource {
     }
     
     @POST
-    @Path("/ment")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response ment(Object o) {
-        ArrayList<Book> books = xmlread.Xmlolvas();
-        JSONObject resp = new JSONObject(o);
-        xmlwrite.ment(books);
-
-        return Response.ok(resp.toString())
-                .type(MediaType.APPLICATION_JSON)
+    public Response ptest(Object o) {
+        JSONObject resp = new JSONObject(o);       
+        return Response.ok(o.toString())
                 .build();
     }
+    
+    @POST
+    @Path("/hozzad")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response hozzad(Book be) {
+        ArrayList<Book> books = xmlread.Xmlolvas();
+        books.add(be);
+        xmlwrite.ment(books);                      
+        return Response.ok("siker")
+                .build();
+    }
+    
+    
     
     
     

@@ -26,6 +26,9 @@ public class Book {
         this.oldal = oldal;
         this.borito = bor;
     }
+    public Book() {
+        
+    }
 
     /*public Book (int id) {
         try {this.id=id;

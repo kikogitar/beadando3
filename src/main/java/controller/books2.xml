@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <books>
     <book>
-        <id>0</id>
-        <szerzo>asd</szerzo>
-        <cim>nemtom</cim>
+        <id>3</id>
+        <szerzo>rsges</szerzo>
+        <cim>izéke</cim>
         <oldal>69</oldal>
         <borito>kemény</borito>
     </book>
