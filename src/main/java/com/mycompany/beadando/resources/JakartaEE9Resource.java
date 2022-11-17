@@ -53,12 +53,30 @@ public class JakartaEE9Resource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response hozzad(Book be) {
         ArrayList<Book> books = xmlread.Xmlolvas();
+        be.setId(books.size());
         books.add(be);
-        xmlwrite.ment(books);                      
+        xmlwrite.ment(books);
         return Response.ok("siker")
                 .build();
     }
     
+    @POST
+    @Path("/torol")
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response torol(String s) {
+        ArrayList<Book> books = xmlread.Xmlolvas();
+        Integer id = Integer.parseInt(s);
+        for (int i=0; i < books.size(); i++) {
+            if (id==books.get(i).getId()){
+                books.remove(i);
+            }
+        }
+        xmlwrite.ment(books);
+        return Response.ok("siker")
+                .type(MediaType.APPLICATION_JSON)
+                .build();
+    }
     
     
     

@@ -7,4 +7,11 @@
         <oldal>69</oldal>
         <borito>kemény</borito>
     </book>
+    <book>
+        <id>1</id>
+        <szerzo>asd1</szerzo>
+        <cim>nemtom1</cim>
+        <oldal>691</oldal>
+        <borito>kemény</borito>
+    </book>
 </books>

@@ -17,19 +17,15 @@ import org.json.JSONObject;
 public class Main {
     public static JSONArray kiir() {
         ArrayList<Book> books = xmlread.Xmlolvas();
-        JSONObject resp = new JSONObject();
-        JSONArray ki = new JSONArray();
+        JSONArray resp = new JSONArray();
         for (int i=0; i < books.size();i++) {
-            resp.put("id", books.get(i).getId());
-            resp.put("szerzo", books.get(i).getSzerzo());
-            resp.put("cim", books.get(i).getCim());
-            resp.put("oldal", books.get(i).getOldal());
-            resp.put("borito", books.get(i).getBorito());
-            ki.put(resp);
-        }
-        
-        
-          return ki;
+            resp.put("id " + books.get(i).getId());
+            resp.put("szerzo " + books.get(i).getSzerzo());
+            resp.put("cim " + books.get(i).getCim());
+            resp.put("oldal " + books.get(i).getOldal());
+            resp.put("borito " + books.get(i).getBorito());          
+        }    
+          return resp;
     }
     
 }

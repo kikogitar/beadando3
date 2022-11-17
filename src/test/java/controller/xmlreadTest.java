@@ -42,8 +42,8 @@ public class xmlreadTest {
 
     
 
-    /*
     
+    /*
     @org.junit.jupiter.api.Test
     public void testXmlolvas() {
         System.out.println("Xmlolvas");
@@ -52,6 +52,7 @@ public class xmlreadTest {
         System.out.println(result.get(i).getId() + result.get(i).getCim());
         int id = result.get(i).getId();
         String cim = result.get(i).getCim();
+            System.out.println(result);
         }
         
         assertEquals(result, result);
